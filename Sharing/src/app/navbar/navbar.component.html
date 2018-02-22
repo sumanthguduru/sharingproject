@@ -6,7 +6,10 @@
     <a color="primary" routerLink="/"><mat-icon class="example-icon">home</mat-icon></a>
     <a color="primary" routerLink="/about"><mat-icon class="example-icon">people</mat-icon></a>
     <a color="primary" routerLink="/categories"> <mat-icon class="example-icon">favorite</mat-icon></a>
-    <a color="primary" routerLink="/login"> <mat-icon class="example-icon">perm_identity</mat-icon></a>
+    <a color="primary" routerLink="/login" *ngIf="!username"> <mat-icon class="example-icon">perm_identity</mat-icon></a>
+   <p  *ngIf="username"> <mat-icon (click)="logout()" class="example-icon">account_circle</mat-icon></p>
+<p *ngIf="username">{{username.displayName}}</p>
+<img [src]="username.photoURL" alt="image" width="20px" height="20px;" *ngIf="username">
 
   </mat-toolbar-row>
 </mat-toolbar>

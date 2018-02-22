@@ -1,3 +1,5 @@
+import { UsersService } from './services/users.service';
+import { AuthService } from './services/auth.service';
 import { CategoryService } from './services/category.service';
 import { CategoriesComponent } from './categories/categories.component';
 import { AboutComponent } from './about/about.component';
@@ -20,13 +22,15 @@ import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component'
 import {MatIconModule} from '@angular/material/icon';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
     CategoriesComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,7 @@ MatIconModule,
       {path:'',component:HomeComponent},
       {path:'about',component:AboutComponent},
       {path:'categories',component:CategoriesComponent},
+      {path:'login',component:LoginComponent},
       
 
     ])
@@ -56,7 +61,10 @@ MatIconModule,
   
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    AuthService,
+    UsersService
+
   ],
   bootstrap: [AppComponent]
 })
