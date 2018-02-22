@@ -1,3 +1,4 @@
+import { CategoryService } from './../services/category.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+categories:any[];
+  constructor(public categoryservice:CategoryService) { }
 
   ngOnInit() {
+    this.Display();
   }
-
+Display()
+{
+  this.categoryservice.getAll()
+  .subscribe(result=>this.categories=result);
+}
 }

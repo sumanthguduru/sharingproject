@@ -1,3 +1,13 @@
-<p>
-  navbar works!
-</p>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Third Line</span>
+    <span class="example-spacer"></span>
+    <a color="primary" routerLink="/"><mat-icon class="example-icon">home</mat-icon></a>
+    <a color="primary" routerLink="/about"><mat-icon class="example-icon">people</mat-icon></a>
+    <a color="primary" routerLink="/categories"> <mat-icon class="example-icon">favorite</mat-icon></a>
+    <a color="primary" routerLink="/login"> <mat-icon class="example-icon">perm_identity</mat-icon></a>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

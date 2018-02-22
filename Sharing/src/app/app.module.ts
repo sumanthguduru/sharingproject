@@ -1,3 +1,4 @@
+import { CategoryService } from './services/category.service';
 import { CategoriesComponent } from './categories/categories.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -13,11 +14,12 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule,MatCheckboxModule} from '@angular/material';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component'
-
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { NavbarComponent } from './navbar/navbar.component'
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-
+    MatToolbarModule,
+    MatMenuModule,
+MatIconModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -51,7 +55,9 @@ import { NavbarComponent } from './navbar/navbar.component'
     
   
   ],
-  providers: [],
+  providers: [
+    CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
