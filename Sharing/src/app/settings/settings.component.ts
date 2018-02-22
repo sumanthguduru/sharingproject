@@ -1,12 +1,12 @@
-import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SettingsComponent implements OnInit {
   username:any={};
   constructor(public authservice:AuthService) { 
   this.authservice.user$.subscribe(result=>
@@ -16,15 +16,11 @@ export class LoginComponent implements OnInit {
       console.log(this.username)
     })
   }
+
   ngOnInit() {
-  }
-  Login()
-  {
-  this.authservice.login();
   }
   logout()
   {
     this.authservice.logout();
   }
-
 }

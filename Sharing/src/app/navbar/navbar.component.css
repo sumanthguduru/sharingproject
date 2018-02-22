@@ -7,9 +7,18 @@ mat-toolbar
     margin-left: 50px;
    
 }
+.avatar
+{
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    
+}
 
 .example-icon {
-    padding: 0 14px;
+    padding: 0 34px;
+    cursor: pointer;
   }
   
   .example-spacer {

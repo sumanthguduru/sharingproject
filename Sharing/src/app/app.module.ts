@@ -15,14 +15,21 @@ import {AngularFireDatabaseModule} from 'angularfire2/database'
 import{AngularFireAuthModule} from 'angularfire2/auth';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// for mat modules
 import {MatButtonModule,MatCheckboxModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCardModule} from '@angular/material/card';
+
+import {MatListModule} from '@angular/material/list';
+
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component'
 import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     AboutComponent,
     CategoriesComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,10 @@ import { LoginComponent } from './login/login.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatMenuModule,
+    MatTooltipModule,
 MatIconModule,
+MatCardModule,
+MatListModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -54,6 +65,7 @@ MatIconModule,
       {path:'about',component:AboutComponent},
       {path:'categories',component:CategoriesComponent},
       {path:'login',component:LoginComponent},
+      {path:'settings',component:SettingsComponent},
       
 
     ])

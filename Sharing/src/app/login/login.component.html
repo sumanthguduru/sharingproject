@@ -1,1 +1,16 @@
-<button (click)="Login()">Sign in with Google</button>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<mat-card class="example-card" *ngIf="!username" >
+        <mat-card-title>Sign in!</mat-card-title>
+        <mat-card-subtitle style="color : black;">With</mat-card-subtitle>
+        
+        <mat-card-content style="margin-top:90px">
+                <button class="btn btn-outline-primary" (click)="Login()">Sign in with Google</button>
+        </mat-card-content>
+            
+        <mat-card-content style="margin-top:40px">
+                <button class="btn btn-outline-primary" (click)="Login()">Sign in with Facebook</button>
+        </mat-card-content>
+
+</mat-card>
+
+<h2 *ngIf="username"> You Sucessfully logged in {{username.displayName}}.....</h2>
