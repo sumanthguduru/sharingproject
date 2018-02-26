@@ -22,6 +22,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 
+
 import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { NavbarComponent } from './navbar/navbar.component'
 import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
+import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { SettingsComponent } from './settings/settings.component';
     CategoriesComponent,
     NavbarComponent,
     LoginComponent,
-    SettingsComponent
+    SettingsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

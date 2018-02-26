@@ -1,11 +1,18 @@
 
-<p *ngIf="username"> 
-  <mat-icon (click)="logout()" 
-            routerLink="/login"
-            class="example-icon" 
-            matTooltip="LogOut">
-            <i class="material-icons">power_settings_new</i>
+<body>
+  
+  <p *ngIf="username"> 
+    <mat-icon (click)="logout()" 
+    routerLink="/login"
+    class="example-icon" 
+    matTooltip="LogOut">
+    <i class="material-icons">power_settings_new</i>
   </mat-icon>
 </p>
 
-   
+  <mat-list-item role="listitem">Item 1</mat-list-item>
+  <mat-list-item role="listitem">Item 2</mat-list-item>
+  <mat-list-item role="listitem">Item 3</mat-list-item>
+
+
+</body>

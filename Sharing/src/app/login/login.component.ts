@@ -1,5 +1,6 @@
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   username:any={};
-  constructor(public authservice:AuthService) { 
+  constructor(public authservice:AuthService,public router:Router) { 
   this.authservice.user$.subscribe(result=>
     {
      
@@ -21,10 +22,8 @@ export class LoginComponent implements OnInit {
   Login()
   {
   this.authservice.login();
+  // this.router.navigate(["/"]);
   }
-  logout()
-  {
-    this.authservice.logout();
-  }
+ 
 
 }
