@@ -13,18 +13,22 @@ post:{
   Category:string,
   description:string
 };
-photo="https://material.angular.io/assets/img/examples/shiba2.jpg";
-category="Movies";
-location="Conn"
-description="Sanple Description";
-dateCreated=Date.now().toString();
+
+        photo="https://material.angular.io/assets/img/examples/shiba2.jpg";
+        category="Movies";
+        location="Conn"
+        description="Sanple Description";
+        dateCreated=Date.now();
+
+
+        
   constructor() { 
-    this.photo="https://material.angular.io/assets/img/examples/shiba2.jpg"
-    // this.post.photoUrl="https://material.angular.io/assets/img/examples/shiba2.jpg";
-    // this.post.dateCreated=Date.now().toString();
-    // this.post.Category="Movies";
-    // this.post.description="Sanple Description";
-    // this.post.location="Connecticut"
+                                                                                // this.photo="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                                                                // this.post.photoUrl="https://material.angular.io/assets/img/examples/shiba2.jpg";
+                                                                                // this.post.dateCreated=Date.now().toString();
+                                                                                // this.post.Category="Movies";
+                                                                                // this.post.description="Sanple Description";
+                                                                                // this.post.location="Connecticut"
   }
 
   ngOnInit() {

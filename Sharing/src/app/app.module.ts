@@ -21,8 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
-
-
+import {HttpModule} from '@angular/http';
 import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
@@ -47,6 +46,7 @@ import { PostComponent } from './post/post.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
     // animation import because all browsers doesnt support material component
     BrowserAnimationsModule,
     MatButtonModule,
@@ -61,6 +61,7 @@ MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+
 
     //Routing Config
     RouterModule.forRoot([
