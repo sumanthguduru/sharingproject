@@ -9,20 +9,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   username:any={};
-  constructor(public authservice:AuthService,public router:Router) { 
+  
+  
+  constructor(public authservice:AuthService,public router:Router) 
+  { 
   this.authservice.user$.subscribe(result=>
     {
-     
       this.username=result
       console.log(this.username)
     })
   }
-  ngOnInit() {
-  }
+  
+  ngOnInit() {}
+  
+  
+  
   Login()
   {
   this.authservice.login();
-  // this.router.navigate(["/"]);
   }
  
 

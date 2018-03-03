@@ -1,0 +1,24 @@
+
+
+ 
+
+
+
+
+<form (ngSubmit)="Create(post)" [formGroup]="post">
+        <div class="form-group">
+  <mat-form-field class="text" class="form-control"  >
+      <textarea matInput placeholder="Write post" matTextareaAutosize matAutosizeMinRows="2"  formControlName="post"
+                matAutosizeMaxRows="5"    ></textarea>
+    </mat-form-field>
+    </div>
+    
+    <button mat-raised-button  >Post</button>
+
+</form>
+
+
+
+
+
+

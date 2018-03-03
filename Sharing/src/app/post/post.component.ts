@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Post } from './../../classes/post';
+import { WritepostComponent } from './../writepost/writepost.component';
+import { MatDialog } from '@angular/material';
+
+import { Component, OnInit,Input } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { PostService } from '../services/post.service';
+
 
 @Component({
   selector: 'app-post',
@@ -6,32 +13,67 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-post:{
-  photoUrl:string
-  dateCreated:string,
-  location:string,
-  Category:string,
-  description:string
-};
-
+  posts: any[];
+  description: any;
+  Likescount: number;
+  IsLike:boolean;
+  des:string;
+  username:any={};
+  
+  
+  constructor(public authservice:AuthService,public dialog:MatDialog,public postservice:PostService ) {
+    this.authservice.user$.subscribe(result=>
+      {
+        this.username=result
+        console.log(this.username)
+      })
+     this. Likescount=10;
+     this.IsLike=true; 
+    }
+  
+  post:{
+          photoUrl:string
+          dateCreated:string,
+          location:string,
+          Category:string
+    
+}      
         photo="https://material.angular.io/assets/img/examples/shiba2.jpg";
         category="Movies";
         location="Conn"
-        description="Sanple Description";
         dateCreated=Date.now();
 
 
         
-  constructor() { 
-                                                                                // this.photo="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                                                                                // this.post.photoUrl="https://material.angular.io/assets/img/examples/shiba2.jpg";
-                                                                                // this.post.dateCreated=Date.now().toString();
-                                                                                // this.post.Category="Movies";
-                                                                                // this.post.description="Sanple Description";
-                                                                                // this.post.location="Connecticut"
-  }
+    
 
   ngOnInit() {
+    this.getPosts();
+
   }
 
+ 
+  
+OnClick()
+{
+  
+this.IsLike = !this.IsLike;
+this.Likescount += (this.IsLike)? -1 : 1;
+}
+
+openPopup()
+{
+this.dialog.open(WritepostComponent,{
+  
+    width: '850px',
+    height:'700px',
+    data: { username:this.username }
+  
+})
+}
+
+getPosts()
+{
+  this.postservice.getAll().subscribe(p=>this.posts=p)
+}
 }

@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { UsersService } from './services/users.service';
 import { AuthService } from './services/auth.service';
 import { CategoryService } from './services/category.service';
@@ -23,6 +24,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import {HttpModule} from '@angular/http';
 import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
@@ -31,6 +35,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PostComponent } from './post/post.component';
+import { WritepostComponent } from './writepost/writepost.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { NotificationComponent } from './notification/notification.component';
+import { PostcardComponent } from './postcard/postcard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +48,16 @@ import { PostComponent } from './post/post.component';
     NavbarComponent,
     LoginComponent,
     SettingsComponent,
-    PostComponent
+    PostComponent,
+    WritepostComponent,
+    PrivacyComponent,
+    NotificationComponent,
+    PostcardComponent,
+   
+  ],
+  entryComponents:[
+WritepostComponent,
+PostComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +71,12 @@ import { PostComponent } from './post/post.component';
     MatToolbarModule,
     MatMenuModule,
     MatTooltipModule,
-MatIconModule,
-MatCardModule,
-MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule,
+    MatDialogModule,
+    MatGridListModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -69,6 +89,8 @@ MatListModule,
       {path:'about',component:AboutComponent},
       {path:'categories',component:CategoriesComponent},
       {path:'login',component:LoginComponent},
+      {path:'settings/privacy',component:PrivacyComponent},
+      {path:'settings/notification',component:NotificationComponent},
       {path:'settings',component:SettingsComponent},
       
 
@@ -79,7 +101,8 @@ MatListModule,
   providers: [
     CategoryService,
     AuthService,
-    UsersService
+    UsersService,
+    PostService
 
   ],
   bootstrap: [AppComponent]

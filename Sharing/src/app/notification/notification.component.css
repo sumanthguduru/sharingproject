@@ -1,0 +1,14 @@
+mat-list
+{
+    margin-left: 150px;
+  margin-top: 90px;  
+}
+
+
+
+mat-grid-list{
+    margin-top: 90px;
+    margin-left: 50px;
+    padding: 1em;
+    overflow: hidden;
+}

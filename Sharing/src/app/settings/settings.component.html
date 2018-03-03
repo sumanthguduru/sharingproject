@@ -1,18 +1,41 @@
 
 <body>
   
-  <p *ngIf="username"> 
+  <p *ngIf="username"> Logout
     <mat-icon (click)="logout()" 
     routerLink="/login"
     class="example-icon" 
     matTooltip="LogOut">
     <i class="material-icons">power_settings_new</i>
-  </mat-icon>
-</p>
+      </mat-icon>
 
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
+    </p>
+
+<div class="cointainer">
+    <div class="row">
+    <mat-list  class="col-sm-1" role="list">
+        <mat-list-item role="listitem" style="color:black;"> <b> Settings </b> </mat-list-item>
+        <hr>
+        <mat-list-item class="active" routerLink="/settings" role="listitem" style="color:black; cursor:pointer;">Account</mat-list-item>
+        <mat-list-item role="listitem" routerLink="/settings/privacy" style="color:black; cursor:pointer;">Privacy</mat-list-item>
+        <mat-list-item role="listitem" routerLink="/settings/notification" style="color:black; cursor:pointer;">Notification</mat-list-item>
+      </mat-list>
 
 
+
+
+<mat-grid-list class="col-sm-5" cols="1" rowHeight="12:1">
+    <mat-list-item role="listitem" style="color:black;"><b>Connected Accounts</b></mat-list-item>
+    <hr>
+    <div> google</div>
+     
+     <br>
+    <mat-list-item role="listitem" style="color:black;"> <b> Account Settings</b></mat-list-item>
+    <hr>
+    <div>  Username:</div>
+    
+  </mat-grid-list>
+</div>
+ 
+</div>
 </body>
