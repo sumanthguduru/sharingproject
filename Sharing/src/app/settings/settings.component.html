@@ -1,17 +1,56 @@
 
+<!-- <mat-tab-group>
+    <mat-tab label="Account">
+      <mat-grid-list class="col-sm-5" cols="1" rowHeight="12:1">
+        <mat-list-item role="listitem" style="color:black;"><b>Connected Accounts</b></mat-list-item>
+        <hr>
+        <div> google</div>
+         
+         <br>
+        <mat-list-item role="listitem" style="color:black;"> <b> Account Settings</b></mat-list-item>
+        <hr>
+        <div>  Username:</div>
+        
+      </mat-grid-list></mat-tab>
+    <mat-tab routerLink="/settings/privacy" label="Privacy">  </mat-tab>
+    <mat-tab routerLink="/settings/notification" label="Notification"> <app-notification></app-notification> </mat-tab>
+  </mat-tab-group> -->
+
+
 <body>
   
-  <p *ngIf="username"> Logout
+    
+<p 
+*ngIf="username">logout
     <mat-icon (click)="logout()" 
     routerLink="/login"
     class="example-icon" 
     matTooltip="LogOut">
+    
     <i class="material-icons">power_settings_new</i>
       </mat-icon>
+</p>
 
-    </p>
+<mat-tab-group>
+  <mat-tab label="Account">
+    <br>
+    <mat-list-item role="listitem"><b>Connected Accounts</b></mat-list-item>
+    <hr>
+    <div> google</div>
+    <br>
+    <mat-list-item role="listitem"> <b> Account Settings</b></mat-list-item>
+    <hr>
+    <div>  Username:</div>
+    </mat-tab>
+    <mat-tab label="Privacy"> <br> <app-privacy></app-privacy> </mat-tab>
+    <mat-tab label="Notification"> <br> <app-notification></app-notification> </mat-tab>
+</mat-tab-group>
 
-<div class="cointainer">
+</body>
+<!-- <router-outlet></router-outlet> -->
+
+
+<!-- <div class="cointainer">
     <div class="row">
     <mat-list  class="col-sm-1" role="list">
         <mat-list-item role="listitem" style="color:black;"> <b> Settings </b> </mat-list-item>
@@ -20,9 +59,6 @@
         <mat-list-item role="listitem" routerLink="/settings/privacy" style="color:black; cursor:pointer;">Privacy</mat-list-item>
         <mat-list-item role="listitem" routerLink="/settings/notification" style="color:black; cursor:pointer;">Notification</mat-list-item>
       </mat-list>
-
-
-
 
 <mat-grid-list class="col-sm-5" cols="1" rowHeight="12:1">
     <mat-list-item role="listitem" style="color:black;"><b>Connected Accounts</b></mat-list-item>
@@ -37,5 +73,6 @@
   </mat-grid-list>
 </div>
  
-</div>
-</body>
+</div> -->
+
+

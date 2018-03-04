@@ -1,6 +1,7 @@
 import { Component, OnInit,Input} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { PostService } from '../services/post.service';
+import { CategoryService } from '../services/category.service';
 
 
 @Component({
@@ -10,23 +11,59 @@ import { PostService } from '../services/post.service';
 })
 export class WritepostComponent implements OnInit {
 post:FormGroup;
- 
- @Input() description:string ;
 
-  constructor(public fb:FormBuilder, public postservice:PostService ) {
+categories:any[];
+msgs;
+uploadedFiles: any[] = [];
+
+
+@Input() description:string ;
+
+  constructor(public fb:FormBuilder, public postservice:PostService,public categoryservice:CategoryService) {
     // this.addpost();
    
    }
 
-  ngOnInit() {
-    this.post = this.fb.group(
-      {
+  ngOnInit() 
+  {
+    this.post = this.fb.group({
        post:['']
-       
-      });
-
+       });
+      this.Display();
   }
 
+  animalControl = new FormControl('', [Validators.required]);
+
+  onUpload(event)
+   {
+     for(let file of event.files) 
+        {
+         this.uploadedFiles.push(file);
+        }
+     this.msgs = [];
+     this.msgs.push({severity: 'info', summary: 'File Uploaded', detail: ''});
+   }
+
+ Create(post)
+  {
+    let result=post.value;
+    console.log(result)
+    this.postservice.Create(result);
+  }
+
+  Display()
+  {
+    this.categoryservice.getAll()
+    .subscribe(result=>this.categories=result);
+  }
+}
+
+ // animals = [
+  //   {name: 'Dog', sound: 'Woof!'},
+  //   {name: 'Cat', sound: 'Meow!'},
+  //   {name: 'Cow', sound: 'Moo!'},
+  //   {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
+  // ];
   // addpost(post?)
   // { 
   //   console.log(post);
@@ -35,14 +72,8 @@ post:FormGroup;
     
   // }
 
-  
-  Create(post)
-  {
-    let result=post.value;
-    console.log(result)
-    this.postservice.Create(result);
-  }
-
-
-}
-
+   // foods = [
+  //   {value: 'steak-0', viewValue: 'Steak'},
+  //   {value: 'pizza-1', viewValue: 'Pizza'},
+  //   {value: 'tacos-2', viewValue: 'Tacos'}
+  // ];

@@ -27,8 +27,7 @@ export class PostComponent implements OnInit {
         this.username=result
         console.log(this.username)
       })
-     this. Likescount=10;
-     this.IsLike=true; 
+    
     }
   
   post:{
@@ -53,13 +52,6 @@ export class PostComponent implements OnInit {
   }
 
  
-  
-OnClick()
-{
-  
-this.IsLike = !this.IsLike;
-this.Likescount += (this.IsLike)? -1 : 1;
-}
 
 openPopup()
 {

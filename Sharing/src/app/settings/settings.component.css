@@ -3,31 +3,10 @@ p {
     margin-top: 30px;
     margin-left: 1300px;
     font-size: 30px;
-    
+       
 }
 
-mat-list
+mat-tab-group
 {
-    margin-left: 150px;
-    
-}
-
-.container {
-    width: 50%;
-    border: 1px solid black;
-    float: left;
-    max-width: 110px;
-    margin: 0;
-   
-}
-
-mat-grid-list{
-margin-left: 50px;
-
-  
-    padding: 1em;
-    overflow: hidden;
-}
-body{
-    margin: auto;
+    margin:10px 120px;
 }

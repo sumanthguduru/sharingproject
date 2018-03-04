@@ -27,6 +27,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+//PrimeNG Modules
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
@@ -77,11 +82,16 @@ PostComponent
     MatInputModule,
     MatDialogModule,
     MatGridListModule,
+    MatSelectModule,
+    MatTabsModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-
+    //primeng
+    AccordionModule,
+    FileUploadModule,
+    
 
     //Routing Config
     RouterModule.forRoot([
