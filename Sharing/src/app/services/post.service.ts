@@ -3,11 +3,16 @@ import {AngularFireDatabase} from 'angularfire2/database'
 @Injectable()
 export class PostService {
 
-  constructor(public db:AngularFireDatabase) { }
+  uid: string;
+  constructor(public db:AngularFireDatabase) {
+   this.uid= localStorage.getItem('userId');
+   }
 
   Create(post)
   {
-  return this.db.list('/post/uid1').push(post);
+    
+    
+  return this.db.list('/post/'+this.uid).push(post);
   }
 
 

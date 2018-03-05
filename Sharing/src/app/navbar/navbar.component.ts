@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   username:any={};
+  uid:string;
   constructor(public authservice:AuthService) {
     this.authservice.user$.subscribe(result=>
       {
        
-        this.username=result
-        console.log(this.username)
+        this.username=result,
+        localStorage.setItem('userId',result.uid)
+        console.log("Navbar uid is "+this.uid+ this.username)
       })
    
    }

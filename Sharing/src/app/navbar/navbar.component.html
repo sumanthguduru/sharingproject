@@ -10,7 +10,7 @@
     <mat-icon  routerLink="/categories" class="example-icon" matTooltip="Notifications">favorite</mat-icon>
     <mat-icon  routerLink="/login" *ngIf="!username" class="example-icon" matTooltip="Login">perm_identity</mat-icon>
     
-    <!-- <p *ngIf="username">{{username.displayName}}</p> -->
+    <p *ngIf="username">{{username.uid}}</p>
     <img [src]="username.photoURL" routerLink="/settings" *ngIf="username" alt="avatar" class="avatar"  >
 
   </mat-toolbar-row>
