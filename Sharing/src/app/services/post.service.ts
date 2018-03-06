@@ -10,13 +10,14 @@ export class PostService {
    }
 
   Create(post:Post)
-  {
+  { 
     return this.db.list('/post').push(
       {uid:this.uid,
         post:post.post,
         imageUrl:post.imageUrl?post.imageUrl:"",
         category:post.category,
-        postCreated:new Date().toString()
+        postCreated:new Date().toString(),
+        like:post.like?post.like:""
       });
   }
 

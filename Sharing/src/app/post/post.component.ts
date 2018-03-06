@@ -29,27 +29,11 @@ export class PostComponent implements OnInit {
     this.authservice.user$.subscribe(result=>
       {
         this.username=result
-        console.log(this.username)
+        // console.log(this.username)
       })
     
     }
-  
-  post:{
-          photoUrl:string
-          dateCreated:string,
-          location:string,
-          Category:string
-    
-}      
-        photo="https://material.angular.io/assets/img/examples/shiba2.jpg";
-        category="Movies";
-        location="Conn"
-        dateCreated=Date.now();
-
-
         
-    
-
   ngOnInit() {
     this.getPosts();
 
@@ -70,7 +54,7 @@ this.dialog.open(WritepostComponent,{
 
 getPosts()
 {
-  this.postservice.getAllById(this.uid).subscribe(p=>this.posts=p)
+  this.postservice.getAll().subscribe(p=>this.posts=p)
   
   
 }

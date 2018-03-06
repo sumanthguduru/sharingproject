@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
        
         this.username=result,
         localStorage.setItem('userId',result.uid)
-        console.log("Navbar uid is "+this.uid+ this.username)
+        // console.log("Navbar uid is "+this.uid+ this.username)
       })
    
    }
