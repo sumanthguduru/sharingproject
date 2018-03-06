@@ -17,7 +17,7 @@ import{AngularFireAuthModule} from 'angularfire2/auth';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // for mat modules
-import {MatButtonModule,MatCheckboxModule} from '@angular/material';
+import {MatButtonModule,MatCheckboxModule, MatFormFieldModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -28,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
+import{MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
 //PrimeNG Modules
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
@@ -77,6 +78,7 @@ IndividualProfileComponent
     ReactiveFormsModule,
     HttpModule,
     ImageUploadModule,
+    
     // animation import because all browsers doesnt support material component
     BrowserAnimationsModule,
     MatButtonModule,
@@ -91,7 +93,9 @@ IndividualProfileComponent
     MatDialogModule,
     MatGridListModule,
     MatSelectModule,
+    MatStepperModule,
     MatTabsModule,
+    MatFormFieldModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

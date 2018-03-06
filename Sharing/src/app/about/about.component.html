@@ -1,11 +1,62 @@
 
 <body>
-  <p >
-  about works!
-</p>
-<h1>Hai Hai Hai</h1>
-<h1>Hai Hai Hai</h1>
-<h1>Hai Hai Hai</h1>
-<h1>Hai Hai Hai</h1>
-<h1>Hai Hai Hai</h1>
+  <button mat-raised-button (click)="isLinear = true" id="toggle-linear">Enable linear mode</button>
+
+  <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Educational background</ng-template>
+        <h1>sumanth guduru</h1>
+        <p>
+          
+           <li type="bullet"> Fairfield University Fairfield,CT </li>           
+           <li type="bullet">Master of Science: Software Engineering</li> 
+           <br>
+          Fairfield University prepares students for success. With an emphasis on innovative, experiential learning and a focus on developing the whole person, we produce graduates who are future ready.
+        </p>
+        <h1></h1>
+        <p>
+
+            <li type="bullet"> Fairfield University Fairfield,CT </li>           
+            <li type="bullet">Master of Science: Software Engineering</li> 
+
+        </p>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Websites</ng-template>
+        
+<h1 style="background-color:tan;">Nurse A Gem </h1>
+<P>
+            Nurse a Gem was started by Father John Punakunnel. To date, over 100 students have participated in our program and have gone on to become a nurse.  He and his team prepare students to have the desire by inspiring and implanting in there mind “I will I can” and inspire them to have the willpower and ambition to be a nurse.
+
+            I as a nurse save and serve any one at any time everywhere as the brave verinocia i did for the savior as a good donation who saved the man who was so bad.
+            The former president of the United States said that it is better to open the door than sit in a darkroom.
+            <br><a href= "http://www.nurseagem.com" target="_blank">http://www.nurseagem.com</a>
+        </P>
+        <h1 style="background-color:tan;">Online Cosmetic Store</h1>
+        <p>
+            We prioritize finding you beauty, fashion, hair, baby, home and health related magazines. One of the best places to find tried and tested beauty tips is in beauty magazines. They also feature updates on the latest fashion and beauty trends, makeup products and hair styles. If you’re a health and beauty guru at heart, these publications can keep you up to speed on your industry knowledge and beauty looks.
+           <br><a href= "http://kosmo1.weebly.com" target="_blank">http://kosmo1.weebly.com</a><br>
+          </p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Future Projects</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+
 </body>
