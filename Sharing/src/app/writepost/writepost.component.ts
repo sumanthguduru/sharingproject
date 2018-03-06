@@ -10,51 +10,53 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./writepost.component.css']
 })
 export class WritepostComponent implements OnInit {
+  uid: any;
 post:FormGroup;
 
 categories:any[];
-msgs;
-uploadedFiles: any[] = [];
+
+selectedfile:any;
 
 
 @Input() description:string ;
 
   constructor(public fb:FormBuilder, public postservice:PostService,public categoryservice:CategoryService) {
     // this.addpost();
-   
+   localStorage.getItem('uid');
    }
 
   ngOnInit() 
   {
     this.post = this.fb.group({
-       post:['']
+       post:[''],
+       category:[''],
+       image:[''],
+       uid:[this.uid]
        });
       this.Display();
   }
 
   animalControl = new FormControl('', [Validators.required]);
 
-  onUpload(event)
-   {
-     for(let file of event.files) 
-        {
-         this.uploadedFiles.push(file);
-        }
-     this.msgs = [];
-     this.msgs.push({severity: 'info', summary: 'File Uploaded', detail: ''});
-   }
+  
 
  Create(post)
   {
     let result=post.value;
     console.log(result)
     this.postservice.Create(result);
+    
   }
 
   Display()
   {
     this.categoryservice.getAll()
     .subscribe(result=>this.categories=result);
+  }
+
+  OnImageSelected($event)
+  {
+ console.log(event);
   }
 }
 

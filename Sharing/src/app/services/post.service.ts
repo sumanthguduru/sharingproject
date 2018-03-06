@@ -1,3 +1,4 @@
+import { Post } from './../../classes/post';
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database'
 @Injectable()
@@ -8,17 +9,25 @@ export class PostService {
    this.uid= localStorage.getItem('userId');
    }
 
-  Create(post)
+  Create(post:Post)
   {
-    
-    
-  return this.db.list('/post/'+this.uid).push(post);
+    return this.db.list('/post').push(
+      {uid:this.uid,
+        post:post.post,
+        imageUrl:post.imageUrl?post.imageUrl:"",
+        category:post.category,
+        postCreated:new Date().toString()
+      });
   }
-
 
   getAll()
 {
-  let uid="uid1"
-return this.db.list('/post/'+uid).valueChanges()
+  
+return this.db.list('/post').snapshotChanges()
+}
+getAllById(uid)
+{
+  return this.db.list('/post',
+r=>r.orderByChild('uid').equalTo(uid)).valueChanges()
 }
 }

@@ -33,6 +33,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {FileUploadModule} from 'primeng/fileupload';
 
+import { ImageUploadModule } from "angular2-image-upload";
+
 import { AppComponent } from './app.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component'
@@ -44,6 +46,7 @@ import { WritepostComponent } from './writepost/writepost.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { NotificationComponent } from './notification/notification.component';
 import { PostcardComponent } from './postcard/postcard.component';
+import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,17 +61,22 @@ import { PostcardComponent } from './postcard/postcard.component';
     PrivacyComponent,
     NotificationComponent,
     PostcardComponent,
+    IndividualProfileComponent,
    
   ],
   entryComponents:[
 WritepostComponent,
-PostComponent
+PostComponent,
+IndividualProfileComponent
+ 
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    ImageUploadModule,
     // animation import because all browsers doesnt support material component
     BrowserAnimationsModule,
     MatButtonModule,

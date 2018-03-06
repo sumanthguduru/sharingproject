@@ -1,41 +1,21 @@
 
 <form (ngSubmit)="Create(post)" [formGroup]="post">
         <div class="form-group">
-  <mat-form-field class="text" class="form-control"  >
-      <textarea matInput placeholder="Write post" matTextareaAutosize matAutosizeMinRows="2"  formControlName="post"
-                matAutosizeMaxRows="5"    ></textarea>
-    </mat-form-field>
-    </div>
-
-
-    <!-- <mat-form-field>
-            <mat-select placeholder="Select Category">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field> -->
-          <mat-form-field>
-                <mat-select placeholder="Select Category" [formControl]="animalControl" required>
-                  <mat-option>--</mat-option>
-                  <mat-option *ngFor="let c of categories" [value]="c">
-                        {{c.title}}
-                  </mat-option>
-                </mat-select>
-                <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an Category</mat-error> -->
-                <!-- <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
-              </mat-form-field>
-    
-             
-              <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" 
-                      multiple="multiple" accept="image/*" maxFileSize="1000000">
-                  <ng-template pTemplate="content">
-                      <ul *ngIf="uploadedFiles.length">
-                          <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                      </ul>
-                  </ng-template>        
-              </p-fileUpload>
-
+        <mat-form-field class="text" class="form-control"  >
+        <textarea matInput placeholder="Write post" matTextareaAutosize matAutosizeMinRows="2"  formControlName="post"
+        matAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field  class="form-control">
+        <mat-select placeholder="Select Category" required formControlName="category">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let c of categories" [value]="c">
+          {{c}}
+        </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <input type="file" (change)="OnImageSelected($event)" class="form-control" formControlName="image">
+        </div>
 
 
     <button mat-raised-button  >Post</button>

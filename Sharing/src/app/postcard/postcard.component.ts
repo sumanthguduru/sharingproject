@@ -1,7 +1,9 @@
+import { MatDialog } from '@angular/material';
 import { Post } from './../../classes/post';
 import { PostService } from './../services/post.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { IndividualProfileComponent } from '../individual-profile/individual-profile.component';
 
 
 @Component({
@@ -15,9 +17,10 @@ export class PostcardComponent implements OnInit {
   username:any={};
   // post:Post;
 @Input('card') card;
+today = Date.now();
 
 
-  constructor(public authservice:AuthService) { 
+  constructor(public authservice:AuthService,public dialog:MatDialog) { 
 
     this.authservice.user$.subscribe(result=>
       {
@@ -40,6 +43,17 @@ export class PostcardComponent implements OnInit {
   this.Likescount += (this.IsLike)? -1 : 1;
   }
 
+
+  getIndividualProfile(uid)
+  {
+   this.dialog.open(IndividualProfileComponent,
+  {
+    width:"500px",
+    height:"500px",
+    data:{userid:uid}
+  })
+   
+  }
 }
 
 

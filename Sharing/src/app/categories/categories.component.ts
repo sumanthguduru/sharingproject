@@ -14,8 +14,8 @@ export class CategoriesComponent implements OnInit {
   ngOnInit() {
             this.categoryform = this.fb.group(
               {
-                title:[''],
-                rate:['']
+                title:['']
+               
               });
             }
 

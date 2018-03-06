@@ -13,15 +13,19 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  uid: string;
+  length: number;
+  keys: any[]
   posts: any[];
   description: any;
   Likescount: number;
   IsLike:boolean;
   des:string;
   username:any={};
-  
+  posty:any;
   
   constructor(public authservice:AuthService,public dialog:MatDialog,public postservice:PostService ) {
+    this.uid= localStorage.getItem('userId');
     this.authservice.user$.subscribe(result=>
       {
         this.username=result
@@ -66,6 +70,8 @@ this.dialog.open(WritepostComponent,{
 
 getPosts()
 {
-  this.postservice.getAll().subscribe(p=>this.posts=p)
+  this.postservice.getAllById(this.uid).subscribe(p=>this.posts=p)
+  
+  
 }
 }
