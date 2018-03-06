@@ -3,7 +3,7 @@
 <mat-card>
     <mat-card-header>
       {{card.uid}}
-        <img mat-card-avatar  (click)="getIndividualProfile(card.uid)" [src]="username.photoURL" *ngIf="username" >
+        <img mat-card-avatar style="cursor:pointer;" (click)="getIndividualProfile(card.uid)" [src]="username.photoURL" *ngIf="username" >
         <mat-card-title>{{card.category}}</mat-card-title>
         <mat-card-subtitle>{{card.postCreated | date}}</mat-card-subtitle>
       </mat-card-header>
@@ -15,7 +15,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button (click)="OnClick()">LIKE  {{Likescount}}</button>
+            <button mat-button (click)="OnClick(post)">LIKE  {{Likescount}}{{card.like}}</button>
            <button mat-button>SHARE</button>
           </mat-card-actions>
   <hr/>

@@ -14,8 +14,7 @@ export class WritepostComponent implements OnInit {
 post:FormGroup;
 
 categories:any[];
-
-selectedfile:any;
+// likes:any; 
 
 
 @Input() description:string ;
@@ -31,7 +30,8 @@ selectedfile:any;
        post:[''],
        category:[''],
        image:[''],
-       uid:[this.uid]
+       uid:[this.uid],
+      //  likes:[this.likes]
        });
       this.Display();
   }
@@ -54,28 +54,7 @@ selectedfile:any;
     .subscribe(result=>this.categories=result);
   }
 
-  OnImageSelected($event)
-  {
- console.log(event);
-  }
+  
 }
 
- // animals = [
-  //   {name: 'Dog', sound: 'Woof!'},
-  //   {name: 'Cat', sound: 'Meow!'},
-  //   {name: 'Cow', sound: 'Moo!'},
-  //   {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
-  // ];
-  // addpost(post?)
-  // { 
-  //   console.log(post);
-  //   this.description = post;
-    
-    
-  // }
-
-   // foods = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'}
-  // ];
+ 

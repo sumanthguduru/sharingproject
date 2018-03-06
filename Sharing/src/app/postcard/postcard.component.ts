@@ -12,23 +12,23 @@ import { IndividualProfileComponent } from '../individual-profile/individual-pro
   styleUrls: ['./postcard.component.css']
 })
 export class PostcardComponent implements OnInit {
-  Likescount: number;
+  Likescount: any;
   IsLike: boolean;
   username:any={};
   // post:Post;
 @Input('card') card;
-today = Date.now();
 
 
-  constructor(public authservice:AuthService,public dialog:MatDialog) { 
+
+  constructor(public authservice:AuthService,public dialog:MatDialog,public postservice:PostService) { 
 
     this.authservice.user$.subscribe(result=>
       {
        
         this.username=result
-        console.log(this.username)
+        // console.log(this.username)
       })
-      this. Likescount=10;
+      this. Likescount=0;
       this.IsLike=true; 
 
   }
@@ -36,12 +36,13 @@ today = Date.now();
   ngOnInit() {
   }
 
-  OnClick()
+  OnClick(post)
   {
-    
-  this.IsLike = !this.IsLike;
+this.IsLike = !this.IsLike;
   this.Likescount += (this.IsLike)? -1 : 1;
-  }
+  // let like = this.Likescount.value
+this.postservice.Create(this.Likescount.value) 
+}
 
 
   getIndividualProfile(uid)
