@@ -23,9 +23,11 @@ export class PostComponent implements OnInit {
   des:string;
   username:any={};
   posty:any;
+  photoURL:string;
   
   constructor(public authservice:AuthService,public dialog:MatDialog,public postservice:PostService ) {
     this.uid= localStorage.getItem('userId');
+    this.photoURL=localStorage.getItem('photoURL')
     this.authservice.user$.subscribe(result=>
       {
         this.username=result

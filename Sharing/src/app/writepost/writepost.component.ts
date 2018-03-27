@@ -12,16 +12,17 @@ import { CategoryService } from '../services/category.service';
 export class WritepostComponent implements OnInit {
   uid: any;
 post:FormGroup;
-
+photoURL:any;
 categories:any[];
-// likes:any; 
+
 
 
 @Input() description:string ;
 
   constructor(public fb:FormBuilder, public postservice:PostService,public categoryservice:CategoryService) {
-    // this.addpost();
+    
    localStorage.getItem('uid');
+   localStorage.getItem('photoURL');
    }
 
   ngOnInit() 
@@ -29,9 +30,10 @@ categories:any[];
     this.post = this.fb.group({
        post:[''],
        category:[''],
-       image:[''],
+       imageUrl:[''],
        uid:[this.uid],
-      //  likes:[this.likes]
+       photoURL:[this.photoURL]
+      
        });
       this.Display();
   }

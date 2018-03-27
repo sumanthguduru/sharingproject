@@ -6,4 +6,5 @@ shares:number;
 imageUrl?:string;
 uid:string;
 category:string;
+photoURL:string;
 }

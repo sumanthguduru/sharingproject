@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   username:any={};
   uid:string;
+  photoURL:string;
   constructor(public authservice:AuthService) {
     this.authservice.user$.subscribe(result=>
       {
        
         this.username=result,
         localStorage.setItem('userId',result.uid)
+        localStorage.setItem('photoURL',result.photoURL)
         // console.log("Navbar uid is "+this.uid+ this.username)
       })
    
@@ -22,8 +24,5 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-  // logout()
-  // {
-  //   this.authservice.logout();
-  // }
+  
 }
