@@ -1,6 +1,23 @@
-
+<mat-drawer-container>
 <!-- <app-writepost *ngIf="description" [description]="des" ></app-writepost> -->
-<button style="margin-left:700px; margin-top:30px;" mat-raised-button (click)="openPopup()" >Create a Post</button>
+<mat-icon class="material-icons" (click)="openPopup()">create</mat-icon>
+<br>
+<br><br>
+   
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+ 
+
+
+<mat-drawer #drawer class="example-sidenav" mode="side">
+    <app-divcategory></app-divcategory>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  
+
 <br> 
 <br>
 
@@ -14,3 +31,5 @@
   <app-postcard [card]="p.payload.val()"></app-postcard>
  
 </div>
+
+</mat-drawer-container>

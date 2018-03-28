@@ -24,6 +24,7 @@ export class PostComponent implements OnInit {
   username:any={};
   posty:any;
   photoURL:string;
+  showFiller = false;
   
   constructor(public authservice:AuthService,public dialog:MatDialog,public postservice:PostService ) {
     this.uid= localStorage.getItem('userId');
@@ -47,8 +48,8 @@ openPopup()
 {
 this.dialog.open(WritepostComponent,{
   
-    width: '850px',
-    height:'700px',
+    width: '500px',
+    height:'400px',
     data: { username:this.username }
   
 })

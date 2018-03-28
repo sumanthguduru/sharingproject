@@ -30,6 +30,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
 import{MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
 //PrimeNG Modules
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {FileUploadModule} from 'primeng/fileupload';
@@ -48,6 +52,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { NotificationComponent } from './notification/notification.component';
 import { PostcardComponent } from './postcard/postcard.component';
 import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
+import { DivcategoryComponent } from './divcategory/divcategory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +68,7 @@ import { IndividualProfileComponent } from './individual-profile/individual-prof
     NotificationComponent,
     PostcardComponent,
     IndividualProfileComponent,
+    DivcategoryComponent,
    
   ],
   entryComponents:[
@@ -96,6 +102,8 @@ IndividualProfileComponent
     MatStepperModule,
     MatTabsModule,
     MatFormFieldModule,
+    MatSidenavModule,
+    MatExpansionModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

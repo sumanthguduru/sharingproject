@@ -2,10 +2,32 @@
 <br>
 <mat-card>
     <mat-card-header>
-      {{card.uid}}
+      <!-- {{card.uid}} -->
         <img mat-card-avatar style="cursor:pointer;" (click)="getIndividualProfile(card.uid)" [src]="card.photoURL" *ngIf="username" >
         <mat-card-title>{{card.category}}</mat-card-title>
         <mat-card-subtitle>{{card.postCreated | date}}</mat-card-subtitle>
+        
+        <div class="a">
+                <span class="example-spacer"></span>
+        <button mat-icon-button (click)="OnClick(post)" >{{Likescount}} <mat-icon>favorite</mat-icon></button>
+        <button mat-icon-button  [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>visibility_off</mat-icon>
+                  <span>Hide</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>warning</mat-icon>
+                  <span>Report</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Disable alerts</span>
+                </button>
+              </mat-menu>
+            </div>
       </mat-card-header>
       <br>
       <mat-card-content>
@@ -15,8 +37,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button (click)="OnClick(post)">LIKE  {{Likescount}}{{card.like}}</button>
-           <button mat-button>SHARE</button>
+            
           </mat-card-actions>
  
 
