@@ -1,5 +1,7 @@
 
 <img [src]="username.photoURL" *ngIf="username" alt="user" class="avatar">{{username.displayName}}
+<br>  
+<br>
 <form (ngSubmit)="Create(post)" [formGroup]="post">
 
   <div class="form-group">
@@ -39,12 +41,12 @@
 
         </div>
 <div class="buttons">
-        <button mat-raised-button  >close</button>
+        
     <button mat-raised-button  >Post</button>
     
   </div>
 </form>
-
+<button mat-raised-button (click)="OnCloseDialog()" >close</button>
 
 
 

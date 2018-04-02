@@ -32,6 +32,8 @@ import{MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 
 //PrimeNG Modules
@@ -53,6 +55,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { PostcardComponent } from './postcard/postcard.component';
 import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
 import { DivcategoryComponent } from './divcategory/divcategory.component';
+import { MessagingService } from './services/messaging.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,6 +107,7 @@ IndividualProfileComponent
     MatFormFieldModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatSlideToggleModule,
         // Firebase Initialization
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -132,7 +136,8 @@ IndividualProfileComponent
     CategoryService,
     AuthService,
     UsersService,
-    PostService
+    PostService,
+    MessagingService
 
   ],
   bootstrap: [AppComponent]

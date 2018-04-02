@@ -24,12 +24,13 @@
 .example-sidenav-content {
   display: flex;
   height: 100%;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
 }
 
 .example-sidenav {
-  padding: 20px;
+  padding: 60px;
+  opacity: 0.6;
 }
 mat-drawer-container{
 background-image: url('bg4.png');

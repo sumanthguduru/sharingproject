@@ -47,9 +47,9 @@ export class PostComponent implements OnInit {
 openPopup()
 {
 this.dialog.open(WritepostComponent,{
-  
+   
     width: '500px',
-    height:'400px',
+    height:'460px',
     data: { username:this.username }
   
 })

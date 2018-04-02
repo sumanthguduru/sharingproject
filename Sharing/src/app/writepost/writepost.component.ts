@@ -1,8 +1,9 @@
-import { Component, OnInit,Input} from '@angular/core';
+import { Component, OnInit,Input, Inject} from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { CategoryService } from '../services/category.service';
 import { AuthService } from '../services/auth.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 
 @Component({
@@ -18,10 +19,12 @@ photoURL:any;
 categories:any[];
 
 
-
 @Input() description:string ;
 
-  constructor(public fb:FormBuilder, public postservice:PostService,public categoryservice:CategoryService,public authservice:AuthService) {
+  constructor(public fb:FormBuilder, public postservice:PostService,
+    public categoryservice:CategoryService,
+    public authservice:AuthService, public dialogRef: MatDialogRef<WritepostComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
     
    localStorage.getItem('uid');
    localStorage.getItem('photoURL');
@@ -63,7 +66,9 @@ categories:any[];
     .subscribe(result=>this.categories=result);
   }
 
-  
+  OnCloseDialog(){
+    this.dialogRef.close();
+  }
 }
 
  
