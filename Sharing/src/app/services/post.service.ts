@@ -20,7 +20,8 @@ export class PostService {
         imageUrl:post.imageUrl?post.imageUrl:"",
         category:post.category,
         postCreated:new Date().toString(),
-        like:post.like?post.like:""
+        like:post.like?post.like:0,
+        comment:post.comment?post.comment:""
       });
   }
 
@@ -34,4 +35,19 @@ getAllById(uid)
   return this.db.list('/post',
 r=>r.orderByChild('uid').equalTo(uid)).valueChanges()
 }
+updateLikes(count,postId)
+{
+return this.db.object('/post/'+postId).update(
+  {
+    like:count
+  }
+)}
+
+updateComment(word,postId)
+{
+return this.db.object('/post/'+postId).update(
+  {
+  comment:word
+  }
+)}
 }

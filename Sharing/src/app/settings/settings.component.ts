@@ -13,7 +13,7 @@ export class SettingsComponent implements OnInit {
     {
      
       this.username=result
-      console.log(this.username)
+      // console.log(this.username)
     })
   }
 

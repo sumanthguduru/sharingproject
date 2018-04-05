@@ -1,12 +1,24 @@
 mat-card
 {
     margin:auto;
-    max-width: 500px;
+    max-width: 600px;
     border-radius: 20px;
 }
 
 
   .a{
     
-    margin-left:200px; 
+    margin-left:320px; 
+  }
+
+  .btn
+  {
+    margin-left:220px;
+  }
+
+  .comment
+  {
+    margin-left: 20px;
+    border-radius: 25px;
+    width: 400px;
   }

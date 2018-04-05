@@ -1,35 +1,19 @@
-<mat-drawer-container>
-<!-- <app-writepost *ngIf="description" [description]="des" ></app-writepost> -->
-<mat-icon class="material-icons" (click)="openPopup()">create</mat-icon>
-<br>
-<br><br>
-   
-    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
- 
 
-
-<mat-drawer #drawer class="example-sidenav" mode="side">
-    <app-divcategory></app-divcategory>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
-  </mat-drawer>
-
-  
-
-<br> 
-<br>
-
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+          <app-sidemenu></app-sidemenu>
+  </div>
+  <mat-icon class="material-icons" (click)="openPopup()">create</mat-icon>
+    <div class="col-sm-9">
 <div *ngFor="let p of posts">
-  
 <!-- {{p.payload.val()|json}} -->
-
-
-
-
-  <app-postcard [card]="p.payload.val()"></app-postcard>
- 
+<app-postcard [cardId]="p.key" [card]="p.payload.val()"></app-postcard>
+</div>
+</div>
+</div>
 </div>
 
-</mat-drawer-container>
+
+</body>

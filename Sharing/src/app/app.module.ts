@@ -56,6 +56,7 @@ import { PostcardComponent } from './postcard/postcard.component';
 import { IndividualProfileComponent } from './individual-profile/individual-profile.component';
 import { DivcategoryComponent } from './divcategory/divcategory.component';
 import { MessagingService } from './services/messaging.service';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ import { MessagingService } from './services/messaging.service';
     PostcardComponent,
     IndividualProfileComponent,
     DivcategoryComponent,
+    SidemenuComponent,
    
   ],
   entryComponents:[

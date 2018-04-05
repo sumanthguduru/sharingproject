@@ -1,47 +1,68 @@
 
 <br>
-<mat-card>
+<mat-card *ngIf="isHide">
     <mat-card-header>
       <!-- {{card.uid}} -->
         <img mat-card-avatar style="cursor:pointer;" (click)="getIndividualProfile(card.uid)" [src]="card.photoURL" *ngIf="username" >
         <mat-card-title>{{card.category}}</mat-card-title>
-        <mat-card-subtitle>{{card.postCreated | date}}</mat-card-subtitle>
+        <mat-card-subtitle>{{card.postCreated | date}} </mat-card-subtitle>
         
         <div class="a">
                 <span class="example-spacer"></span>
-        <button mat-icon-button (click)="OnClick(post)" >{{Likescount}} <mat-icon>favorite</mat-icon></button>
+        <button mat-icon-button (click)="OnClick(card.like,cardId)" >{{card.like}} <mat-icon>favorite</mat-icon></button>
         <button mat-icon-button  [matMenuTriggerFor]="menu">
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item>
+                <button mat-menu-item (click)="OnHide()">
                   <mat-icon>visibility_off</mat-icon>
                   <span>Hide</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="ReportPopup()" >
                   <mat-icon>warning</mat-icon>
                   <span>Report</span>
                 </button>
-                <button mat-menu-item>
+                <!-- <button mat-menu-item>
                   <mat-icon>notifications_off</mat-icon>
                   <span>Disable alerts</span>
-                </button>
+                </button> -->
               </mat-menu>
             </div>
       </mat-card-header>
       <br>
+      <img *ngIf="card.imageUrl" [src]="card.imageUrl" width="550px " height="400px">
+      <br>
+      <br>
       <mat-card-content>
+        
           <p>
               {{card.post}}
-              <img *ngIf="card.image" [src]="card.image" width="150px " height="250px">
           </p>
         </mat-card-content>
+        
         <mat-card-actions>
-            
+            <form (ngSubmit)="Create(commentform,cardId)" [formGroup]="commentform">
+                <div class="form-group">
+                  <input type="text" class="form-control" class="comment" placeholder="Comment" formControlName="comment">
+                  <button mat-icon-button><mat-icon>send</mat-icon></button>
+                </div> 
+              </form>
+            <!-- <div >
+                <input type="text" class="comment" placeholder="Comment" ><button mat-icon-button><mat-icon>send</mat-icon></button>
+              </div> -->
+              
           </mat-card-actions>
- 
+          <hr>
+          comments
+          <hr>
 
 </mat-card>
+<mat-card *ngIf="!isHide">
+    <mat-card-header>
+        <button type="button" class="btn btn-outline-secondary" (click)="UnHide()">Undo</button>
+    </mat-card-header>
+</mat-card>
+
 
 
 
